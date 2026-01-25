@@ -17,8 +17,10 @@ public class Streams {
                 .filter(user -> user.getAge() >= 18)
                 .toList();
 
-        for (Users user : list) {
+        /*for (Users user : list) {
             System.out.println(user);
-        }
+        }*/
+
+        list.forEach(System.out::println);
     }
 }
