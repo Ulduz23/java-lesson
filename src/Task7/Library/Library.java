@@ -1,4 +1,4 @@
-package Task7;
+package Task7.Library;
 
 import java.util.List;
 import java.util.ArrayList;
