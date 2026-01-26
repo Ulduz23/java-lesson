@@ -26,18 +26,10 @@ public class BorrowRecord {
         return borrowedDate;
     }
 
-    public void setBorrowedDate(LocalDate borrowedDate) {
-        this.borrowedDate = borrowedDate;
-    }
-
     public LocalDate getReturnedDate() {
         return returnedDate;
     }
-
-    public void setReturnedDate(LocalDate returnedDate) {
-        this.returnedDate = returnedDate;
-    }
-
+    
     @Override
     public String toString() {
         return "BorrowRecord{" +

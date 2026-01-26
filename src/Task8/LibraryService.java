@@ -36,7 +36,7 @@ public class LibraryService {
                 .collect(Collectors.groupingBy(borrowRecord -> borrowRecord.getBook().getTitle(), Collectors.counting()))
                 .entrySet().stream()
                 .max(Comparator.comparingLong(Map.Entry::getValue))
-                .map(entry -> new Book(entry.getKey(), "", 0, 0, false)) // Creating a book object with title only
+                .map(entry -> new Book(entry.getKey(), "", 0, 0, false))
                 .orElse(null);
     }
 
@@ -90,7 +90,6 @@ public class LibraryService {
         return Optional.empty();
     }
 
-    // Task 5: FlatMap and Collectors magic
     public static Set<String> getUniqueAuthors(List<User> users) {
         return users.stream()
                 .flatMap(user -> user.getBorrowHistory().stream())

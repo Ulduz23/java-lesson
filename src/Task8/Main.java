@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Book b1 = new Book("1984", "George Orwell", 1949, 4.9, true);
         Book b2 = new Book("Animal Farm", "George Orwell", 1945, 4.8, false);
         Book b3 = new Book("Clean Code", "Robert Martin", 2008, 4.7, true);
@@ -30,11 +30,11 @@ public class Main {
 
         LibraryService service = new LibraryService(books, users);
 
-        System.out.println("📚 Sorted Books:");
+        System.out.println(" Sorted Books:");
         LibraryService.sortBooks(books).forEach(book -> System.out.println(book.getTitle() + " (" + book.getAuthor() + ", " + book.getYear() + ") ⭐" + book.getRating()));
 
 
-        System.out.println("\n📊 Library Analysis:");
+        System.out.println("\n Library Analysis:");
 
         double averageRating = LibraryService.getAverageRating(books);
         System.out.println("Average Rating: " + averageRating);
@@ -55,18 +55,18 @@ public class Main {
             System.out.println(author + " -> " + bookList);
         });
 
-        System.out.println("\n📚 Authors read by users:");
+        System.out.println("\n Authors read by users:");
         Set<String> uniqueAuthors = LibraryService.getUniqueAuthors(users);
         System.out.println(uniqueAuthors);
 
-        System.out.println("\n📖 Recommendation for Aydin:");
+        System.out.println("\n Recommendation for Aydin:");
         service.findRecommendedBookForUser(u1)
                 .ifPresentOrElse(
                         b -> System.out.println("Recommended: " + b),
                         () -> System.out.println("No recommendation available.")
                 );
 
-        System.out.println("\n👑 Top Reader of October 2025:");
+        System.out.println("\n Top Reader of October 2025:");
         LibraryService.findTopReaderOfMonth(users, 10, 2025)
                 .ifPresentOrElse(
                         u -> System.out.println("Top Reader: " + u.getName()),
